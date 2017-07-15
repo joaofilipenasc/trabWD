@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Início</title>
+
+<!-- Styles -->
+<link href="css/app.css" rel="stylesheet" type="text/css">
+<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+
+<style> body, html{background-color: #431210;}</style>
+<!-- Scripts -->
+<script src="js/app.js"></script>
+<script src="js/viaCEP.js"></script>
+<script src="js/jquery.mask.min.js"></script>
+<script src="js/jquery.js"></script>
+<script src="js/bootstrap.min.js"></script>
+</head>
+<body>
+<div id="app">
+<nav class="navbar navbar-default navbar-static-top">
+    <div class="container">
+        <div class="navbar-header">
+
+            <!-- Collapsed Hamburger -->
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse">
+                <span class="sr-only">Toggle Navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <!-- Branding Image -->
+            <a style="color: #431210; font-weight: bold;" class="navbar-brand" href="">
+                Random Ice Cream
+            </a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="app-navbar-collapse">
+            <!-- Left Side Of Navbar -->
+            <ul class="nav navbar-nav">
+
+            </ul>
+
+            <!-- Right Side Of Navbar -->
+            <ul class="nav navbar-nav navbar-right">
+                <!-- Authentication Links -->
+                    <li class="dropdown">
+                        <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                            Nome <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="pagEditar.html">Editar Informações</a></li>
+                            <li>
+                                <a href="pagLogout.html">Sair</a>
+                            </li>
+                        </ul>
+                    </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!--Content da pagina-->
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <div class="panel panel-default">
+                <div class="panel-heading">Cadastro</div>
+                <div class="panel-body">
+                    <form class="form-horizontal" role="form" method="POST" action="{{ route('register') }}">
+
+                        <div class="form-group{{ $errors->has('nome') ? ' has-error' : '' }}">
+                            <label for="nome" class="col-md-4 control-label">Nome</label>
+
+                            <div class="col-md-6">
+                                <input id="nome" type="text" class="form-control" name="nome" value="{{ old('nome') }}" required autofocus>
+                            </div>
+                        </div>
+
+                        <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
+                            <label for="email" class="col-md-4 control-label">E-Mail</label>
+
+                            <div class="col-md-6">
+                                <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group{{ $errors->has('cpf') ? ' has-error' : '' }}">
+                            <label for="cpf" class="col-md-4 control-label">CPF</label>
+
+                            <div class="col-md-6">
+                                <input id="cpf" type="text" class="form-control" name="cpf" value="{{ old('cpf') }}"
+                                data-mask="000.000.000-00" data-mask-reverse="true" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group{{ $errors->has('rg') ? ' has-error' : '' }}">
+                            <label for="rg" class="col-md-4 control-label">RG</label>
+
+                            <div class="col-md-6">
+                                <input id="rg" type="text" class="form-control" name="rg" value="{{ old('rg') }}"
+                                data-mask="000.000.000" data-mask-reverse="true" pattern="\d{3}\.\d{3}\.\d{3}" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group{{ $errors->has('nasc') ? ' has-error' : '' }}">
+                            <label for="nasc" class="col-md-4 control-label">Data de Nascimento</label>
+
+                            <div class="col-md-6">
+                                <input id="nasc" type="date" class="form-control" name="nasc" value="{{ old('nasc') }}" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group{{ $errors->has('genero') ? ' has-error' : '' }}">
+                            <label for="genero" class="col-md-4 control-label">Gênero</label>
+
+                            <div class="col-md-6">
+                                <label>
+                                <input id="genero" type="radio"  name="genero" value="Masculino" required>
+                                Masculino
+                                </label>
+                                <label>
+                                <input id="genero" type="radio" name="genero" value="Feminino" required>
+                                Feminino
+                                </label>
+                                <label>
+                                <input id="genero" type="radio" name="genero" value="Outro" required>
+                                Outro
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="form-group{{ $errors->has('cep') ? ' has-error' : '' }}">
+                            <label for="cep" class="col-md-4 control-label">CEP</label>
+
+                            <div class="col-md-6">
+                                <input id="cep" type="text" class="form-control" name="cep" value="{{ old('cep') }}"
+                                data-mask="00000-000" maxlength="9" pattern="\d{5}-\d{3}" required>
+
+                            </div>
+                        </div>
+
+                        <div class="form-group{{ $errors->has('rua') ? ' has-error' : '' }}">
+                            <label for="rua" class="col-md-4 control-label">Rua</label>
+
+                            <div class="col-md-6">
+                                <input id="rua" type="text" class="form-control" name="rua" value="{{ old('rua') }}" required>
+
+                            </div>
+                        </div>
+
+                        <div class="form-group{{ $errors->has('tipo') ? ' has-error' : '' }}">
+                            <label for="tipo" class="col-md-4 control-label">Tipo de logradouro</label>
+
+                            <div class="col-md-6">
+                                <input id="tipo" type="text" class="form-control" name="tipo" value="{{ old('tipo') }}" required>
+
+                            </div>
+                        </div>
+
+                        <div class="form-group{{ $errors->has('numero') ? ' has-error' : '' }}">
+                            <label for="numero" class="col-md-4 control-label">Número</label>
+
+                            <div class="col-md-6">
+                                <input id="numero" type="text" class="form-control" name="numero" value="{{ old('numero') }}" required>
+
+                            </div>
+                        </div>
+
+                        <div class="form-group{{ $errors->has('complemento') ? ' has-error' : '' }}">
+                            <label for="complemento" class="col-md-4 control-label">Complemento</label>
+
+                            <div class="col-md-6">
+                                <input id="complemento" type="text" class="form-control" name="complemento" value="{{ old('complemento') }}" required>
+
+                            </div>
+                        </div>
+
+                        <div class="form-group{{ $errors->has('bairro') ? ' has-error' : '' }}">
+                            <label for="bairro" class="col-md-4 control-label">Bairro</label>
+
+                            <div class="col-md-6">
+                                <input id="bairro" type="text" class="form-control" name="bairro" value="{{ old('bairro') }}" required>
+
+                            </div>
+                        </div>
+
+                        <div class="form-group{{ $errors->has('cidade') ? ' has-error' : '' }}">
+                            <label for="cidade" class="col-md-4 control-label">Cidade</label>
+
+                            <div class="col-md-6">
+                                <input id="cidade" type="text" class="form-control" name="cidade" value="{{ old('cidade') }}" required>
+
+                            </div>
+                        </div>
+
+                        <div class="form-group{{ $errors->has('estado') ? ' has-error' : '' }}">
+                            <label for="estado" class="col-md-4 control-label">Estado</label>
+
+                            <div class="col-md-6">
+                                <input id="estado" type="text" class="form-control" name="estado" value="{{ old('estado') }}"
+                                maxlength="2" required>
+
+                            </div>
+                        </div>
+
+                        <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
+                            <label for="password" class="col-md-4 control-label">Senha</label>
+
+                            <div class="col-md-6">
+                                <input id="password" type="password" class="form-control" name="password" required>
+
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="password-confirm" class="col-md-4 control-label">Confirmação da senha</label>
+
+                            <div class="col-md-6">
+                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-md-6 col-md-offset-4">
+                                <button type="submit" class="btn btn-primary">
+                                    Cadastrar
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--Content da pagina-->
+
+</div>
+</body>
+</html>
