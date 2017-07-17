@@ -1,19 +1,23 @@
 <!DOCTYPE html>
-<html lang="{{ app()->getLocale() }}">
+<html lang="pt-br">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Random Ice Cream</title>
+        <title>Página Principal - Random Ice Cream</title>
+
+        <link href="css/app.css" rel="stylesheet" type="text/css">
+        <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
 
         <!-- Styles -->
         <style>
+
             html, body {
-                background: url('http://widefon.com/_ld/11/92093738.jpg') #fff;
+                background: url('images/index-image.jpeg') #fff;
                 font-family: 'Raleway', sans-serif;
                 font-weight: 600;
                 height: 100vh;
@@ -49,10 +53,10 @@
                 font-size: 84px;
             }
 
-            p{
+            .p1 {
               width: 50%;
               margin: auto;
-              font-size: 30px;
+              font-size: 40px;
             }
 
             .links > a {
@@ -68,20 +72,37 @@
             .m-b-md {
                 margin-bottom: 30px;
             }
-        </style>
+
+            .table-direitos {
+                color: white;
+                margin-right: 50px;
+
+
+            }
+
+    </style>
     </head>
     <body>
         <div class="flex-center position-ref full-height">
                 <div class="top-right links">
-                        <a href="{{ url('/login') }}">Login</a>
-                        <a href="{{ url('/register') }}">Cadastro</a>
+                        <a href="login.html">Login</a>
+                        <a href="cadastro.html">Cadastro</a>
+                        <a href="quemsomos.html"> Quem Somos </a>
+                        <a href="ajuda.html"> Ajuda </a>
                 </div>
             <div class="content">
                 <div class="title m-b-md">
+                    <img src="images/logo.png"><br>
                     Random Ice Cream
                 </div>
-                  <p> O serviço de mystery box mais delicioso da Internet!</p>
-            </div>
+                  <p class="p1"> O serviço de mystery box mais delicioso da Internet!</p><br><br><br>
+                  <button type="button" class="btn btn-primary btn-lg">Veja nossos sabores</button>
+              </div>
         </div>
+        <table class="table-direitos" border="0" width="500" align="right">
+          <tr>
+            <td align="right"> <h5>Todos os direitos autorais reservados &copy;</h5> </td>
+          </tr>
+        </table>
     </body>
 </html>
