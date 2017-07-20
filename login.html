@@ -17,10 +17,17 @@
 
 
 <style>
+
+  html, body {
+
+    background-color: #431210;
+
+}
 .top-right {
     position: absolute;
     right: 10px;
     top: 18px;
+
 }
 
 
@@ -39,12 +46,17 @@
     letter-spacing: .1rem;
     text-decoration: none;
     text-transform: uppercase;
+
 }
 
-.table-direitos {
-    color: white;
-    margin-right: 5px;
+#direitos {
 
+  float: right;
+  margin: 60px 30px 0 0;
+  font-size: 20px;
+  font-family: 'Moon Flower', sans-serif;
+  font-weight: bold;
+  color: white;
 }
 
 </style>
@@ -57,7 +69,7 @@
 <script src="js/jquery.js"></script>
 <script src="js/bootstrap.min.js"></script>
 </head>
-<body background="">
+<body>
 <div id="app">
 <nav class="navbar navbar-default navbar-static-top">
     <div class="container">
@@ -72,8 +84,8 @@
             </button>
 
             <!-- Branding Image -->
-            <a href="index.html" style="color: #431210;" class="navbar-brand">
-                <b>Página Principal - Random Ice Cream</b>
+            <a href="index.html" style="color: #431210; font-family: 'Moon Flower', sans-serif;font-weight: bold; font-size:25px" class="navbar-brand">
+                <b>Página Principal - Surprice!</b>
             </a>
         </div>
 
@@ -87,7 +99,7 @@
             <ul class="nav navbar-nav navbar-right">
                 <!-- Authentication Links -->
                     <li class="dropdown">
-                        <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                        <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                             Nome <span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu" role="menu">
@@ -162,16 +174,7 @@
                 </div>
             </div>
         </div>
-        <table class="table-direitos" border="0" width="500" align="right">
-          <tr>
-            <td align="right"> <h5>Todos os direitos autorais reservados &copy;</h5> </td>
-          </tr>
-        </table>
     </div>
-</div>
-</div>
-
-
-
+  <div id="direitos">Todos os direitos autorais reservados</div>
 </body>
 </html>

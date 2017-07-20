@@ -11,14 +11,38 @@
 <link href="css/app.css" rel="stylesheet" type="text/css">
 <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
 
-<style> body, html{}
+<style> body, html{
 
-.table-direitos {
-    color: white;
-    margin-right: 50px;
-
+  background-color: #431210
 
 }
+
+.links > a {
+    color: white;
+    padding: 0 25px;
+    font-size: 25px;
+    font-weight: 600;
+    letter-spacing: .1rem;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.top-right {
+    position: absolute;
+    right: 10px;
+    top: 18px;
+}
+
+#direitos {
+
+  float: right;
+  margin: 60px 30px 0 0;
+  font-size: 20px;
+  font-family: 'Moon Flower', sans-serif;
+  font-weight: bold;
+  color: white;
+}
+
 
 </style>
 <!-- Scripts -->
@@ -28,7 +52,7 @@
 <script src="js/jquery.js"></script>
 <script src="js/bootstrap.min.js"></script>
 </head>
-<body background="images/boxes-pattern.png">
+<body>
 <div id="app">
 <nav class="navbar navbar-default navbar-static-top">
     <div class="container">
@@ -43,8 +67,8 @@
             </button>
 
             <!-- Branding Image -->
-            <a style="color: #431210; font-weight: bold;" class="navbar-brand" href="index.html">
-                Página Principal - Random Ice Cream
+            <a style="color: #431210; font-family: 'Moon Flower', sans-serif;font-weight: bold; font-size:25px" class="navbar-brand" href="index.html">
+                <b>Página Principal - Surprice!</b>
             </a>
         </div>
 
@@ -253,11 +277,7 @@
 
 </div>
 
-<table class="table-direitos" border="0" width="500" align="right">
-  <tr>
-    <td align="right"> <h5>Todos os direitos autorais reservados &copy;</h5> </td>
-  </tr>
-</table>
+<div id="direitos">Todos os direitos autorais reservados</div>
 
 </body>
 </html>
