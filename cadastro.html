@@ -16,11 +16,12 @@
 <style>
 
   html, body {
-      font-family: 'Moon Flower', sans-serif;
+      font-family: "helvetica";
       font-weight: bold;
       height: 100vh;
       margin: 0;
-      color: white;
+      color: #431210;
+      background-color: #431210;
   }
 
 .links > a {
@@ -47,6 +48,12 @@
     font-family: 'Moon Flower', sans-serif;
     font-weight: bold;
     color: white;
+}
+
+#genero {
+
+    font-family: 'helvetica', sans-serif;
+
 }
 
 
@@ -89,7 +96,7 @@
             <ul class="nav navbar-nav navbar-right">
                 <!-- Authentication Links -->
                     <li class="dropdown">
-                        <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                        <a href=""style="color: #431210; font-family: 'Moon Flower', sans-serif;font-weight: bold; font-size:25px"class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                             Nome <span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu" role="menu">
@@ -109,7 +116,7 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading"> <h4>Ainda não é cliente? Cadastre-se</h4> </div>
+                <div class="panel-heading"><h4 style="color: #431210; font-family: 'Moon Flower', sans-serif;font-weight: bold; font-size:25px" >Ainda não é cliente? Cadastre-se</h4> </div>
                 <div class="panel-body">
                     <form class="form-horizontal" role="form" method="POST" action="{{ route('register') }}">
 
@@ -117,7 +124,7 @@
                             <label for="nome" class="col-md-4 control-label">Nome</label>
 
                             <div class="col-md-6">
-                                <input id="nome" type="text" class="form-control" name="nome" placeholder="Seu nome" required autofocus> <br>
+                                <input id="nome" type="text" class="form-control" name="nome" placeholder="Nome" required autofocus> <br>
                             </div>
                         </div>
 
@@ -144,7 +151,7 @@
                             <label for="email" class="col-md-4 control-label">E-Mail</label>
 
                             <div class="col-md-6">
-                                <input id="email" type="email" class="form-control" name="email" placeholder="Seu e-mail" required> <br>
+                                <input id="email" type="email" class="form-control" name="email" placeholder="E-mail" required> <br>
                             </div>
                         </div>
 
@@ -152,7 +159,7 @@
                             <label for="password" class="col-md-4 control-label">Senha</label>
 
                             <div class="col-md-6">
-                                <input id="password" type="password" class="form-control" name="password" placeholder="Sua senha" required> <br>
+                                <input id="password" type="password" class="form-control" name="password" placeholder="Senha" required> <br>
 
                             </div>
                         </div>
@@ -169,7 +176,7 @@
                             <label for="cpf" class="col-md-4 control-label">CPF</label>
 
                             <div class="col-md-6">
-                                <input id="cpf" type="text" class="form-control" name="cpf" placeholder="Seu CPF"
+                                <input id="cpf" type="text" class="form-control" name="cpf" placeholder="CPF"
                                 data-mask="000.000.000-00" data-mask-reverse="true" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" required> <br>
                             </div>
                         </div>
@@ -178,7 +185,7 @@
                             <label for="rg" class="col-md-4 control-label">RG</label>
 
                             <div class="col-md-6">
-                                <input id="rg" type="text" class="form-control" name="rg" placeholder="Seu RG"
+                                <input id="rg" type="text" class="form-control" name="rg" placeholder="RG"
                                 data-mask="000.000.000" data-mask-reverse="true" pattern="\d{3}\.\d{3}\.\d{3}" required> <br>
                             </div>
                         </div>
@@ -196,7 +203,7 @@
 
                             <div class="col-md-6">
 
-                                <input id="cep" type="text" class="form-control" name="cep" placeholder="Seu CEP"
+                                <input id="cep" type="text" class="form-control" name="cep" placeholder="CEP"
                                 data-mask="00000-000" maxlength="9" pattern="\d{5}-\d{3}" required> <br>
 
                             </div>
@@ -206,7 +213,7 @@
                             <label for="rua" class="col-md-4 control-label">Rua</label>
 
                             <div class="col-md-6">
-                                <input id="rua" type="text" class="form-control" name="rua" placeholder="Sua rua" required> <br>
+                                <input id="rua" type="text" class="form-control" name="rua" placeholder="Rua" required> <br>
 
                             </div>
                         </div>
@@ -215,7 +222,7 @@
                             <label for="logradouro" class="col-md-4 control-label">Logradouro</label>
 
                             <div class="col-md-6">
-                                <input id="logradouro" type="text" class="form-control" name="logradouro" placeholder="Seu logradouro" required> <br>
+                                <input id="logradouro" type="text" class="form-control" name="logradouro" placeholder="Logradouro" required> <br>
 
                             </div>
                         </div>
@@ -224,7 +231,7 @@
                             <label for="numero" class="col-md-4 control-label">Número</label>
 
                             <div class="col-md-6">
-                                <input id="numero" type="text" class="form-control" name="numero" placeholder="Número do seu endereço" required> <br>
+                                <input id="numero" type="text" class="form-control" name="numero" placeholder="Número do endereço" required> <br>
 
                             </div>
                         </div>
@@ -233,7 +240,7 @@
                             <label for="complemento" class="col-md-4 control-label">Complemento</label>
 
                             <div class="col-md-6">
-                                <input id="complemento" type="text" class="form-control" name="complemento" placeholder="Complemento do seu endereço" required> <br>
+                                <input id="complemento" type="text" class="form-control" name="complemento" placeholder="Complemento do endereço" required> <br>
 
                             </div>
                         </div>
@@ -242,7 +249,7 @@
                             <label for="bairro" class="col-md-4 control-label">Bairro</label>
 
                             <div class="col-md-6">
-                                <input id="bairro" type="text" class="form-control" name="bairro" placeholder="Seu bairro" required> <br>
+                                <input id="bairro" type="text" class="form-control" name="bairro" placeholder="Bairro" required> <br>
 
                             </div>
                         </div>
@@ -251,7 +258,7 @@
                             <label for="cidade" class="col-md-4 control-label">Cidade</label>
 
                             <div class="col-md-6">
-                                <input id="cidade" type="text" class="form-control" name="cidade" placeholder="Sua cidade" required> <br>
+                                <input id="cidade" type="text" class="form-control" name="cidade" placeholder="Cidade" required> <br>
 
                             </div>
                         </div>
@@ -260,7 +267,7 @@
                             <label for="estado" class="col-md-4 control-label">Estado</label>
 
                             <div class="col-md-6">
-                                <input id="estado" type="text" class="form-control" name="estado" placeholder="Seu estado"
+                                <input id="estado" type="text" class="form-control" name="estado" placeholder="Estado"
                                 maxlength="2" required> <br>
 
                             </div>
