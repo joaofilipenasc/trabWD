@@ -16,12 +16,12 @@
 <style>
 
   html, body {
-      font-family: "helvetica";
+      font-family: 'Moon Flower', sans-serif;
       font-weight: bold;
       height: 100vh;
       margin: 0;
       color: #431210;
-      background-color: #431210;
+      background: url('images/bg-opacity.png') fixed #fff;
   }
 
 
@@ -52,6 +52,7 @@
 
 .panel-default{
     margin-top: 100px;
+    font-family: 'helvetica', sans-serif;
 }
 
 #direitos {
@@ -76,6 +77,34 @@
   font-weight: bold;
   font-size: 60px;
   margin-left: 20px;
+}
+
+footer {
+    position: relative;
+    height: 300px;
+    bottom: 0;
+    width: 100%;
+    background-color: #431210;
+    color: white;
+}
+
+footer .content h1{
+  padding: 125px 0 0 300px;
+  font-size: 80px;
+  float: left;
+  clear: right;
+  color: white;
+}
+
+footer .content a{
+  text-decoration: none;
+}
+
+footer .content p{
+  padding: 160px 0 0 0;
+  margin-right: 300px;
+  font-size: 25px;
+  float: right;
 }
 
 </style>
@@ -286,7 +315,11 @@
     </div>
 </div>
 <!--Content da pagina-->
-<div id="direitos">Todos os direitos autorais reservados</div>
-
+<footer class="fixed-bottom">
+   <div class="content">
+     <a href="index.html"><h1>Surprice!</h1></a>
+     <p>Surprice! Produtos LTDA - IFRN<br>Rua Dr. Nilo Bezerra Ramalho, 1692, Tirol</p>
+   </div>
+</footer>
 </body>
 </html>
