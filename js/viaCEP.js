@@ -30,7 +30,7 @@ $(document).ready(function() {
                         $("#estado").val("...");
 
                         //Consulta o webservice viacep.com.br/
-                        $.getJSON("//viacep.com.br/ws/"+ cep +"/json/?callback=?", function(dados) {
+                        $.getJSON("http://viacep.com.br/ws/"+ cep +"/json/?callback=?", function(dados) {
 
                             if (!("erro" in dados)) {
                                 //Atualiza os campos com os valores da consulta.

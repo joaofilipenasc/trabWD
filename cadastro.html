@@ -106,6 +106,7 @@ footer .content p{
 <!-- Scripts -->
 <script src="js/app.js"></script>
 <script src="js/viaCEP.js"></script>
+<script src="js/jquery.js"></script>
 <script src="js/jquery.mask.min.js"></script>
 <script src="js/mask.js"></script>
 <script src="js/bootstrap.min.js"></script>
@@ -270,13 +271,13 @@ footer .content p{
                             <label for="estado" class="col-md-4 control-label">Estado</label>
 
                             <div class="col-md-6">
-                                <input id="estado" type="text" class="form-control" name="estado" placeholder="Estado"
+                                <input id="estado" type="text" class="form-control" name="estado" placeholder=""
                                 maxlength="2" required>
 
                             </div>
                           </div>
 
-                          <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
+                          <div class="form-group{ $errors->has('password') ? ' has-error' : '' }}">
                               <label for="password" class="col-md-4 control-label">Senha</label>
 
                               <div class="col-md-6">
@@ -284,11 +285,11 @@ footer .content p{
                               </div>
                           </div>
 
-                          <div class="form-group">
+                          <div class="form-group{ $errors->has('password') ? ' has-error' : '' }}">
                               <label for="password-confirm" class="col-md-4 control-label">Confirmação da senha</label>
 
                               <div class="col-md-6">
-                                  <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required><br>
+                                  <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
                               </div>
                           </div>
             </div>
