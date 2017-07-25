@@ -8,9 +8,9 @@
 <title>Cadastro | Surprice!</title>
 
 <!-- Styles -->
-<link href="css/app.css" rel="stylesheet" type="text/css">
-<link href="css/style.css" rel="stylesheet" type="text/css">
-<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+<link href="css/app.css" rel="stylesheet" type="text/css"/>
+<link href="css/style.css" rel="stylesheet" type="text/css"/>
+<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
 <link rel="shortcut icon" href="images/favicon.ico"/>
 
 <style>
@@ -107,7 +107,7 @@ footer .content p{
 <script src="js/app.js"></script>
 <script src="js/viaCEP.js"></script>
 <script src="js/jquery.mask.min.js"></script>
-<script src="js/jquery.js"></script>
+<script src="js/mask.js"></script>
 <script src="js/bootstrap.min.js"></script>
 </head>
 <body>
@@ -141,17 +141,54 @@ footer .content p{
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading"><h4 style="color: #431210; font-family: 'Moon Flower', sans-serif;font-weight: bold; font-size:25px" >Ainda não é cliente? Cadastre-se</h4> </div>
+                <div class="panel-heading">Cadastro</div>
                 <div class="panel-body">
-                        <div class="">
+                    <form class="form-horizontal" role="form" method="POST" action="user/perfil.html">
+
+                        <div class="form-group{{ $errors->has('nome') ? ' has-error' : '' }}">
                             <label for="nome" class="col-md-4 control-label">Nome</label>
 
                             <div class="col-md-6">
-                                <input id="nome" type="text" class="form-control" name="nome" placeholder="Nome" required autofocus> <br>
+                                <input id="nome" type="text" class="form-control" name="nome" value="" required autofocus>
                             </div>
                         </div>
 
-                        <div class="">
+                        <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
+                            <label for="email" class="col-md-4 control-label">E-Mail</label>
+
+                            <div class="col-md-6">
+                                <input id="email" type="email" class="form-control" name="email" value="" required>
+
+                            </div>
+                        </div>
+
+                        <div class="form-group{{ $errors->has('cpf') ? ' has-error' : '' }}">
+                            <label for="cpf" class="col-md-4 control-label">CPF</label>
+
+                            <div class="col-md-6">
+                                <input id="cpf" type="text" class="form-control" name="cpf" value="" maxlength="14"
+                                data-mask="000.000.000-00" data-mask-reverse="true" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group{{ $errors->has('rg') ? ' has-error' : '' }}">
+                            <label for="rg" class="col-md-4 control-label">RG</label>
+
+                            <div class="col-md-6">
+                                <input id="rg" type="text" class="form-control" name="rg" value=""
+                                data-mask="000.000.000" data-mask-reverse="true" pattern="\d{3}\.\d{3}\.\d{3}" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group{{ $errors->has('nasc') ? ' has-error' : '' }}">
+                            <label for="nasc" class="col-md-4 control-label">Data de Nascimento</label>
+
+                            <div class="col-md-6">
+                                <input id="nasc" type="date" class="form-control" name="nasc" value="" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group{{ $errors->has('genero') ? ' has-error' : '' }}">
                             <label for="genero" class="col-md-4 control-label">Gênero</label>
 
                             <div class="col-md-6">
@@ -164,215 +201,107 @@ footer .content p{
                                 Feminino
                                 </label>
                                 <label>
-                                <input id="genero" type="radio" name="genero" value="Não Binário" required>
-                                Não Binário
-                              </label><br><br>
+                                <input id="genero" type="radio" name="genero" value="Outro" required>
+                                Outro
+                                </label>
                             </div>
                         </div>
 
-                        <div class="">
-                            <label for="email" class="col-md-4 control-label">E-Mail</label>
+                        <div class="form-group{{ $errors->has('cep') ? ' has-error' : '' }}">
+                            <label for="cep" class="col-md-4 control-label">CEP</label>
 
                             <div class="col-md-6">
-                                <input id="email" type="email" class="form-control" name="email" placeholder="E-mail" required> <br>
+                                <input id="cep" type="text" class="form-control" name="cep" value=""
+                                data-mask="00000-000" maxlength="9" pattern="\d{5}-\d{3}" required>
                             </div>
                         </div>
 
-                        <div class="">
-                            <label for="password" class="col-md-4 control-label">Senha</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control" name="password" placeholder="Senha" required> <br>
-
-                            </div>
-                        </div>
-
-                        <div class="">
-                            <label for="password-confirm" class="col-md-4 control-label">Confirmação da senha</label>
-
-                            <div class="col-md-6">
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" placeholder="Confirmação da senha" required> <br>
-                            </div>
-                        </div>
-
-                        <div class="">
-                            <label for="cpf" class="col-md-4 control-label">CPF</label>
-
-                            <div class="col-md-6">
-                                <input id="cpf" type="text" class="form-control" name="cpf" placeholder="CPF"
-                                data-mask="000.000.000-00" data-mask-reverse="true" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" required> <br>
-                            </div>
-                        </div>
-
-                        <div class="">
-                            <label for="rg" class="col-md-4 control-label">RG</label>
-
-                            <div class="col-md-6">
-                                <input id="rg" type="text" class="form-control" name="rg" placeholder="RG"
-                                data-mask="000.000.000" data-mask-reverse="true" pattern="\d{3}\.\d{3}\.\d{3}" required> <br>
-                            </div>
-                        </div>
-
-                        <div class="">
-                            <label for="nasc" class="col-md-4 control-label">Data de Nascimento</label>
-
-                            <div class="col-md-6">
-                                <input id="nasc" type="date" class="form-control" name="nasc" required> <br>
-                            </div>
-                        </div>
-
-                        <div class="">
-                            <label for="rua" class="col-md-4 control-label">CEP</label>
-
-                            <div class="col-md-6">
-
-                                <input id="cep" type="text" class="form-control" name="cep" placeholder="CEP"
-                                data-mask="00000-000" maxlength="9" pattern="\d{5}-\d{3}" required> <br>
-
-                            </div>
-                        </div>
-
-                        <div class="">
+                        <div class="form-group{{ $errors->has('rua') ? ' has-error' : '' }}">
                             <label for="rua" class="col-md-4 control-label">Rua</label>
 
                             <div class="col-md-6">
-                                <input id="rua" type="text" class="form-control" name="rua" placeholder="Rua" required> <br>
-
+                                <input id="rua" type="text" class="form-control" name="rua" value="" required>
                             </div>
                         </div>
 
-                        <div class="">
-                            <label for="logradouro" class="col-md-4 control-label">Logradouro</label>
+                        <div class="form-group{{ $errors->has('tipo') ? ' has-error' : '' }}">
+                            <label for="tipo" class="col-md-4 control-label">Tipo de logradouro</label>
 
                             <div class="col-md-6">
-                                <input id="logradouro" type="text" class="form-control" name="logradouro" placeholder="Logradouro" required> <br>
-
+                                <input id="tipo" type="text" class="form-control" name="tipo" value="" required>
                             </div>
                         </div>
 
-                        <div class="">
+                        <div class="form-group{{ $errors->has('numero') ? ' has-error' : '' }}">
                             <label for="numero" class="col-md-4 control-label">Número</label>
 
                             <div class="col-md-6">
-                                <input id="numero" type="text" class="form-control" name="numero" placeholder="Número do endereço" required> <br>
-
+                                <input id="numero" type="text" class="form-control" name="numero" value="" required>
                             </div>
                         </div>
 
-                        <div class="">
+                        <div class="form-group{{ $errors->has('complemento') ? ' has-error' : '' }}">
                             <label for="complemento" class="col-md-4 control-label">Complemento</label>
 
                             <div class="col-md-6">
-                                <input id="complemento" type="text" class="form-control" name="complemento" placeholder="Complemento do endereço" required> <br>
-
+                                <input id="complemento" type="text" class="form-control" name="complemento" value="" required>
                             </div>
                         </div>
 
-                        <div class="">
+                        <div class="form-group{{ $errors->has('bairro') ? ' has-error' : '' }}">
                             <label for="bairro" class="col-md-4 control-label">Bairro</label>
 
                             <div class="col-md-6">
-                                <input id="bairro" type="text" class="form-control" name="bairro" placeholder="Bairro" required> <br>
-
+                                <input id="bairro" type="text" class="form-control" name="bairro" value="" required>
                             </div>
                         </div>
 
-                        <div class="">
+                        <div class="form-group{{ $errors->has('cidade') ? ' has-error' : '' }}">
                             <label for="cidade" class="col-md-4 control-label">Cidade</label>
 
                             <div class="col-md-6">
-                                <input id="cidade" type="text" class="form-control" name="cidade" placeholder="Cidade" required> <br>
-
+                                <input id="cidade" type="text" class="form-control" name="cidade" value="" required>
                             </div>
                         </div>
 
-                        <div class="">
+                        <div class="form-group{{ $errors->has('estado') ? ' has-error' : '' }}">
                             <label for="estado" class="col-md-4 control-label">Estado</label>
 
                             <div class="col-md-6">
-                                <input id="estado" type="text" class="form-control" name="estado" placeholder="Estado"
-                                maxlength="2" required> <br>
+                                <input id="estado" type="text" class="form-control" name="estado" value=""
+                                maxlength="2" required>
+                            </div>
+                        </div>
 
+                        <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
+                            <label for="password" class="col-md-4 control-label">Senha</label>
+
+                            <div class="col-md-6">
+                                <input id="password" type="password" class="form-control" name="password" required>
                             </div>
-                          </div>
-            </div>
-            <!-- CREDIT CARD FORM STARTS HERE -->
-            <div class="panel-heading display-table" >
-                <div class="row display-tr" >
-                    <h3 class="panel-title display-td" >Pagamento</h3>
-                    <div class="display-td" >
-                        <img class="img-responsive pull-right" src="http://i76.imgup.net/accepted_c22e0.png">
-                    </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="password-confirm" class="col-md-4 control-label">Confirmação da senha</label>
+
+                            <div class="col-md-6">
+                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-md-6 col-md-offset-4">
+                                <button type="submit" class="btn btn-primary">
+                                    Cadastrar
+                                </button>
+                            </div>
+                        </div>
+                    </form>
                 </div>
             </div>
-            <div class="panel-body">
-                <form role="form" id="payment-form" method="POST" action="">
-                    <div class="row">
-                        <div class="col-xs-12">
-                            <div class="form-group">
-                                <label for="cardNumber">CARD NUMBER</label>
-                                <div class="input-group">
-                                    <input
-                                        type="tel"
-                                        class="form-control"
-                                        name="cardNumber"
-                                        placeholder="Valid Card Number"
-                                        autocomplete="cc-number"
-                                        required autofocus
-                                    />
-                                    <span class="input-group-addon"><i class="fa fa-credit-card"></i></span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-xs-7 col-md-7">
-                            <div class="form-group">
-                                <label for="cardExpiry"><span class="hidden-xs">EXPIRATION</span><span class="visible-xs-inline">EXP</span> DATE</label>
-                                <input
-                                    type="tel"
-                                    class="form-control"
-                                    name="cardExpiry"
-                                    placeholder="MM / YY"
-                                    autocomplete="cc-exp"
-                                    required
-                                />
-                            </div>
-                        </div>
-                        <div class="col-xs-5 col-md-5 pull-right">
-                            <div class="form-group">
-                                <label for="cardCVC">CV CODE</label>
-                                <input
-                                    type="tel"
-                                    class="form-control"
-                                    name="cardCVC"
-                                    placeholder="CVC"
-                                    autocomplete="cc-csc"
-                                    required
-                                />
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-xs-12">
-                            <div class="form-group">
-                                <label for="couponCode">COUPON CODE</label>
-                                <input type="text" class="form-control" name="couponCode" />
-                            </div>
-                        </div>
-                    </div>
-                </form>
-                <div class="col-md-6 col-md-offset-7"> <br>
-                    <button type="submit" class="btn btn-success">
-                        Cadastre-se
-                    </button>
-                </div>
-            </div>
-            <!-- CREDIT CARD FORM ENDS HERE -->
-          </div>
         </div>
-      </div>
     </div>
+</div>
 <!--Content da pagina-->
 <footer class="fixed-bottom">
    <div class="content">
