@@ -142,14 +142,14 @@ footer .content p{
                   <div class="panel-heading">Editar Informações Pessoais</div>
 
                   <div class="panel-body">
-                      <form action="/editarUsr" method="POST">
-                				<input type="hidden" value="{{ Auth::user()->id }}" name="id">
+                      <form action="perfil.html" method="POST">
+                				<input type="hidden" value="" name="id">
 
                       <div class="form-group{{ $errors->has('nome') ? ' has-error' : '' }}">
                           <label for="nome" class="col-md-4 control-label">Nome</label>
 
                           <div class="col-md-6">
-                              <input id="nome" type="text" class="form-control" name="nome" value="{{ Auth::user()->nome }}" required autofocus>
+                              <input id="nome" type="text" class="form-control" name="nome" value="" required autofocus>
 
                           </div>
                       </div>
@@ -158,7 +158,7 @@ footer .content p{
                           <label for="email" class="col-md-4 control-label">E-Mail</label>
 
                           <div class="col-md-6">
-                              <input id="email" type="email" class="form-control" name="email" value="{{ Auth::user()->email }}" required>
+                              <input id="email" type="email" class="form-control" name="email" value="" required>
 
                           </div>
                       </div>
@@ -167,7 +167,7 @@ footer .content p{
                           <label for="cpf" class="col-md-4 control-label">CPF</label>
 
                           <div class="col-md-6">
-                              <input id="cpf" type="text" class="form-control" name="cpf" value="{{ Auth::user()->cpf }}"
+                              <input id="cpf" type="text" class="form-control" name="cpf" value=""
                               data-mask="000.000.000-00" data-mask-reverse="true" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" required>
 
                           </div>
@@ -177,7 +177,7 @@ footer .content p{
                           <label for="rg" class="col-md-4 control-label">RG</label>
 
                           <div class="col-md-6">
-                              <input id="rg" type="text" class="form-control" name="rg" value="{{ Auth::user()->rg }}"
+                              <input id="rg" type="text" class="form-control" name="rg" value=""
                               data-mask="000.000.000" data-mask-reverse="true" pattern="\d{3}\.\d{3}\.\d{3}" required>
 
                           </div>
@@ -187,7 +187,7 @@ footer .content p{
                           <label for="nasc" class="col-md-4 control-label">Data de Nascimento</label>
 
                           <div class="col-md-6">
-                              <input id="nasc" type="date" class="form-control" name="nasc" value="{{ Auth::user()->nasc }}" required>
+                              <input id="nasc" type="date" class="form-control" name="nasc" value="" required>
 
                           </div>
                       </div>
@@ -214,7 +214,7 @@ footer .content p{
                           <label for="cep" class="col-md-4 control-label">CEP</label>
 
                           <div class="col-md-6">
-                              <input id="cep" type="text" class="form-control" name="cep" value="{{ Auth::user()->cep }}"
+                              <input id="cep" type="text" class="form-control" name="cep" value=""
                               data-mask="00000-000" pattern="\d{5}-\d{3}" required>
 
                           </div>
@@ -224,7 +224,7 @@ footer .content p{
                           <label for="rua" class="col-md-4 control-label">Rua</label>
 
                           <div class="col-md-6">
-                              <input id="rua" type="text" class="form-control" name="rua" value="{{ Auth::user()->rua }}" required>
+                              <input id="rua" type="text" class="form-control" name="rua" value="" required>
 
                           </div>
                       </div>
@@ -233,7 +233,7 @@ footer .content p{
                           <label for="tipo" class="col-md-4 control-label">Tipo de logradouro</label>
 
                           <div class="col-md-6">
-                              <input id="tipo" type="text" class="form-control" name="tipo" value="{{ Auth::user()->tipo }}" required>
+                              <input id="tipo" type="text" class="form-control" name="tipo" value="" required>
 
                           </div>
                       </div>
@@ -242,7 +242,7 @@ footer .content p{
                           <label for="numero" class="col-md-4 control-label">Número</label>
 
                           <div class="col-md-6">
-                              <input id="numero" type="text" class="form-control" name="numero" value="{{ Auth::user()->numero }}" required>
+                              <input id="numero" type="text" class="form-control" name="numero" value="" required>
 
                           </div>
                       </div>
@@ -251,7 +251,7 @@ footer .content p{
                           <label for="complemento" class="col-md-4 control-label">Complemento</label>
 
                           <div class="col-md-6">
-                              <input id="complemento" type="text" class="form-control" name="complemento" value="{{ Auth::user()->complemento }}" required>
+                              <input id="complemento" type="text" class="form-control" name="complemento" value="" required>
                           </div>
                       </div>
 
@@ -259,7 +259,7 @@ footer .content p{
                           <label for="bairro" class="col-md-4 control-label">Bairro</label>
 
                           <div class="col-md-6">
-                              <input id="bairro" type="text" class="form-control" name="bairro" value="{{ Auth::user()->bairro }}" required>
+                              <input id="bairro" type="text" class="form-control" name="bairro" value="" required>
                           </div>
                       </div>
 
@@ -267,31 +267,31 @@ footer .content p{
                           <label for="cidade" class="col-md-4 control-label">Cidade</label>
 
                           <div class="col-md-6">
-                              <input id="cidade" type="text" class="form-control" name="cidade" value="{{ Auth::user()->cidade }}" required>
+                              <input id="cidade" type="text" class="form-control" name="cidade" value="" required>
                           </div>
                       </div>
                       <div class="form-group{{ $errors->has('estado') ? ' has-error' : '' }}">
                           <label for="estado" class="col-md-4 control-label">Estado</label>
 
                           <div class="col-md-6">
-                              <input id="estado" type="text" class="form-control" name="estado" value="{{ Auth::user()->estado }}"
+                              <input id="estado" type="text" class="form-control" name="estado" value=""
                               maxlength="2" required>
                           </div>
                       </div>
                       <div class="form-group">
                           <label for="estado" class="col-md-4 control-label">Senha</label>
                           <div class="col-md-6">
-                            <a href="/auth/password/reset" type="submit" class="btn btn-outline-info pull-right">Mudar Senha</a>
+                            <a href="senha.html" type="submit" class="btn btn-outline-info pull-right">Mudar Senha</a>
                           </div>
                       </div>
                       <div class="form-group">
                           <div class="col-md-10 col-md-offset-0">
                               <br>
                               <div class="btn-toolbar">
-                              <a href="/home" type="submit" class="btn btn-outline-info pull-left">Cancelar</a>
-                              <button type="submit" class="btn btn-primary pull-right">  Atualizar   </button>
+                              <a href="perfil.html" type="submit" class="btn btn-outline-info pull-left">Cancelar</a>
+                              <button type="submit" class="btn btn-primary pull-right">Atualizar</button>
                               <br><br><br><br><br>
-                              <a href="/pagDeletar" type="submit" class="btn btn-danger pull-right">Deletar Conta</a>
+                              <a href="deletar.html" type="submit" class="btn btn-danger pull-right">Deletar Conta</a>
                               </div>
                           </div>
                       </div>

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>Deletar | Surprice!</title>
+<title>Senha | Surprice!</title>
 
 <!-- Styles -->
 <link href="../css/app.css" rel="stylesheet" type="text/css">
@@ -139,16 +139,45 @@ footer .content p{
       <div class="row">
           <div class="col-md-8 col-md-offset-2">
               <div class="panel panel-default">
-                  <div class="panel-heading">Deletar Conta</div>
+                  <div class="panel-heading">Atualizar a Senha</div>
+
                   <div class="panel-body">
-                    <form action="../index.html" method="POST">
-                     <input type="hidden" value="{{ Auth::user()->id }}" name="id">
-                    <div class="alert alert-danger" role="alert">
-                      <strong>Tem certeza que deseja excluir sua conta?</strong>
-                    </div>
-                      <a href="editar.html" type="submit" class="btn btn-outline-info">Voltar</a>
-  	                 <button type="submit" class="btn btn-danger pull-right">Deletar</button>
-                  </form>
+
+                      <form class="form-horizontal" role="form" method="POST" action="perfil.html">
+
+                          <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
+                              <label for="email" class="col-md-4 control-label">E-Mail</label>
+
+                              <div class="col-md-6">
+                                  <input id="email" type="email" class="form-control" name="email" value="" required autofocus>
+
+                              </div>
+                          </div>
+
+                          <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
+                              <label for="password" class="col-md-4 control-label">Senha</label>
+
+                              <div class="col-md-6">
+                                  <input id="password" type="password" class="form-control" name="password" required>
+                              </div>
+                          </div>
+
+                          <div class="form-group{{ $errors->has('password_confirmation') ? ' has-error' : '' }}">
+                              <label for="password-confirm" class="col-md-4 control-label">Confirme a senha</label>
+                              <div class="col-md-6">
+                                  <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
+                              </div>
+                          </div>
+
+                          <div class="form-group">
+                              <div class="col-md-6 col-md-offset-3">
+                                <a href="editar.html" type="submit" class="btn btn-outline-info pull-left">Cancelar</a>
+                                  <button type="submit" class="btn btn-primary pull-right">
+                                      Atualizar
+                                  </button>
+                              </div>
+                          </div>
+                      </form>
                   </div>
               </div>
           </div>
