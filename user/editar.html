@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Editar | Surprice!</title>
+
+<!-- Styles -->
+<link href="../css/app.css" rel="stylesheet" type="text/css">
+<link href="../css/style.css" rel="stylesheet" type="text/css">
+<link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css">
+<link href="../css/bootstrap-social.css" rel="stylesheet" type="text/css">
+<link href="../css/font-awesome.css" rel="stylesheet" type="text/css">
+<link rel="shortcut icon" href="../images/favicon.ico"/>
+
+<style>
+
+  html, body {
+      font-family: 'Moon Flower', sans-serif;
+      font-weight: bold;
+      height: 100vh;
+      margin: 0;
+      color: #431210;
+      background: url('../images/bg-opacity.png') fixed #fff;
+  }
+
+
+.navbar-static-top{
+    position: fixed; /* Set the navbar to fixed position */
+    top: 0; /* Position the navbar at the top of the page */
+    width: 100%; /* Full width */
+    background-color: white;
+    height: 80px;
+}
+
+.links > a {
+    color: #431108;
+    padding: 0 25px;
+    font-size: 25px;
+    font-weight: 600;
+    letter-spacing: .1rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-family: 'Moon Flower', sans-serif;
+}
+
+.top-right {
+    position: absolute;
+    right: 10px;
+    top: 18px;
+}
+
+.panel-default{
+    margin-top: 100px;
+    font-family: 'helvetica', sans-serif;
+}
+
+.navbar-brand{
+  color: #431210;
+  padding: 25px 0 0 0;
+  font-family: 'Moon Flower', sans-serif;
+  font-weight: bold;
+  font-size: 60px;
+  margin-left: 20px;
+}
+
+footer {
+    position: relative;
+    height: 300px;
+    bottom: 0;
+    width: 100%;
+    background-color: #431210;
+    color: white;
+}
+
+footer .content h1{
+  padding: 125px 0 0 300px;
+  font-size: 80px;
+  float: left;
+  clear: right;
+  color: white;
+  font-weight: bold;
+}
+
+footer .content a{
+  text-decoration: none;
+}
+
+footer .content p{
+  padding: 160px 0 0 0;
+  margin-right: 300px;
+  font-size: 25px;
+  float: right;
+}
+
+.btn{
+  margin-left: 50px;
+}
+
+</style>
+<!-- Scripts -->
+<script src="../js/app.js"></script>
+<script src="../js/viaCEP.js"></script>
+<script src="../js/jquery.mask.min.js"></script>
+<script src="../js/jquery.js"></script>
+<script src="../js/bootstrap.min.js"></script>
+</head>
+<body>
+  <nav class="navbar navbar-default navbar-static-top">
+    <div class="content">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse">
+                <span class="sr-only">Toggle Navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+              <a class="navbar-brand" href="../index.html">
+                  Surprice!
+              </a>
+          </div>
+
+          <div class="collapse navbar-collapse" id="app-navbar-collapse">
+              <ul class="nav navbar-nav navbar-right">
+                <div class="top-right links">
+                <a href="perfil.html">Fulano <span class="glyphicon glyphicon-user"></span></a>
+                <a href="editar.html">Editar Perfil <span class="glyphicon glyphicon-pencil"></span></a>
+                <a href="../index.html">Sair <span class="glyphicon glyphicon-log-out"></span></a>
+                </div>
+              </ul>
+          </div>
+      </div>
+  </nav>
+
+  <!--Content da pagina-->
+  <div class="container">
+      <div class="row">
+          <div class="col-md-8 col-md-offset-2">
+              <div class="panel panel-default">
+                  <div class="panel-heading">Editar Informações Pessoais</div>
+
+                  <div class="panel-body">
+                      <form action="/editarUsr" method="POST">
+                				<input type="hidden" value="{{ Auth::user()->id }}" name="id">
+
+                      <div class="form-group{{ $errors->has('nome') ? ' has-error' : '' }}">
+                          <label for="nome" class="col-md-4 control-label">Nome</label>
+
+                          <div class="col-md-6">
+                              <input id="nome" type="text" class="form-control" name="nome" value="{{ Auth::user()->nome }}" required autofocus>
+
+                          </div>
+                      </div>
+
+                      <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
+                          <label for="email" class="col-md-4 control-label">E-Mail</label>
+
+                          <div class="col-md-6">
+                              <input id="email" type="email" class="form-control" name="email" value="{{ Auth::user()->email }}" required>
+
+                          </div>
+                      </div>
+
+                      <div class="form-group{{ $errors->has('cpf') ? ' has-error' : '' }}">
+                          <label for="cpf" class="col-md-4 control-label">CPF</label>
+
+                          <div class="col-md-6">
+                              <input id="cpf" type="text" class="form-control" name="cpf" value="{{ Auth::user()->cpf }}"
+                              data-mask="000.000.000-00" data-mask-reverse="true" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" required>
+
+                          </div>
+                      </div>
+
+                      <div class="form-group{{ $errors->has('rg') ? ' has-error' : '' }}">
+                          <label for="rg" class="col-md-4 control-label">RG</label>
+
+                          <div class="col-md-6">
+                              <input id="rg" type="text" class="form-control" name="rg" value="{{ Auth::user()->rg }}"
+                              data-mask="000.000.000" data-mask-reverse="true" pattern="\d{3}\.\d{3}\.\d{3}" required>
+
+                          </div>
+                      </div>
+
+                      <div class="form-group{{ $errors->has('nasc') ? ' has-error' : '' }}">
+                          <label for="nasc" class="col-md-4 control-label">Data de Nascimento</label>
+
+                          <div class="col-md-6">
+                              <input id="nasc" type="date" class="form-control" name="nasc" value="{{ Auth::user()->nasc }}" required>
+
+                          </div>
+                      </div>
+
+                      <div class="form-group{{ $errors->has('genero') ? ' has-error' : '' }}">
+                          <label for="genero" class="col-md-4 control-label">Gênero</label>
+                          <div class="col-md-6">
+                              <label>
+                              <input id="genero" type="radio" checked name="genero" value="Masculino" required>
+                              Masculino
+                              </label>
+                              <label>
+                              <input id="genero" type="radio" name="genero" value="Feminino" required>
+                              Feminino
+                              </label>
+                              <label>
+                              <input id="genero" type="radio" name="genero" value="Outro" required>
+                              Outro
+                              </label>
+                          </div>
+                      </div>
+
+                      <div class="form-group{{ $errors->has('cep') ? ' has-error' : '' }}">
+                          <label for="cep" class="col-md-4 control-label">CEP</label>
+
+                          <div class="col-md-6">
+                              <input id="cep" type="text" class="form-control" name="cep" value="{{ Auth::user()->cep }}"
+                              data-mask="00000-000" pattern="\d{5}-\d{3}" required>
+
+                          </div>
+                      </div>
+
+                      <div class="form-group{{ $errors->has('rua') ? ' has-error' : '' }}">
+                          <label for="rua" class="col-md-4 control-label">Rua</label>
+
+                          <div class="col-md-6">
+                              <input id="rua" type="text" class="form-control" name="rua" value="{{ Auth::user()->rua }}" required>
+
+                          </div>
+                      </div>
+
+                      <div class="form-group{{ $errors->has('tipo') ? ' has-error' : '' }}">
+                          <label for="tipo" class="col-md-4 control-label">Tipo de logradouro</label>
+
+                          <div class="col-md-6">
+                              <input id="tipo" type="text" class="form-control" name="tipo" value="{{ Auth::user()->tipo }}" required>
+
+                          </div>
+                      </div>
+
+                      <div class="form-group{{ $errors->has('numero') ? ' has-error' : '' }}">
+                          <label for="numero" class="col-md-4 control-label">Número</label>
+
+                          <div class="col-md-6">
+                              <input id="numero" type="text" class="form-control" name="numero" value="{{ Auth::user()->numero }}" required>
+
+                          </div>
+                      </div>
+
+                      <div class="form-group{{ $errors->has('complemento') ? ' has-error' : '' }}">
+                          <label for="complemento" class="col-md-4 control-label">Complemento</label>
+
+                          <div class="col-md-6">
+                              <input id="complemento" type="text" class="form-control" name="complemento" value="{{ Auth::user()->complemento }}" required>
+                          </div>
+                      </div>
+
+                      <div class="form-group{{ $errors->has('bairro') ? ' has-error' : '' }}">
+                          <label for="bairro" class="col-md-4 control-label">Bairro</label>
+
+                          <div class="col-md-6">
+                              <input id="bairro" type="text" class="form-control" name="bairro" value="{{ Auth::user()->bairro }}" required>
+                          </div>
+                      </div>
+
+                      <div class="form-group{{ $errors->has('cidade') ? ' has-error' : '' }}">
+                          <label for="cidade" class="col-md-4 control-label">Cidade</label>
+
+                          <div class="col-md-6">
+                              <input id="cidade" type="text" class="form-control" name="cidade" value="{{ Auth::user()->cidade }}" required>
+                          </div>
+                      </div>
+                      <div class="form-group{{ $errors->has('estado') ? ' has-error' : '' }}">
+                          <label for="estado" class="col-md-4 control-label">Estado</label>
+
+                          <div class="col-md-6">
+                              <input id="estado" type="text" class="form-control" name="estado" value="{{ Auth::user()->estado }}"
+                              maxlength="2" required>
+                          </div>
+                      </div>
+                      <div class="form-group">
+                          <label for="estado" class="col-md-4 control-label">Senha</label>
+                          <div class="col-md-6">
+                            <a href="/auth/password/reset" type="submit" class="btn btn-outline-info pull-right">Mudar Senha</a>
+                          </div>
+                      </div>
+                      <div class="form-group">
+                          <div class="col-md-10 col-md-offset-0">
+                              <br>
+                              <div class="btn-toolbar">
+                              <a href="/home" type="submit" class="btn btn-outline-info pull-left">Cancelar</a>
+                              <button type="submit" class="btn btn-primary pull-right">  Atualizar   </button>
+                              <br><br><br><br><br>
+                              <a href="/pagDeletar" type="submit" class="btn btn-danger pull-right">Deletar Conta</a>
+                              </div>
+                          </div>
+                      </div>
+                    </form>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+  <!--Content da pagina-->
+
+<footer class="fixed-bottom">
+   <div class="content">
+     <a href="../index.html"><h1>Surprice!</h1></a>
+     <p>Surprice! Produtos LTDA - IFRN<br>Rua Dr. Nilo Bezerra Ramalho, 1692, Tirol</p>
+   </div>
+</footer>
+</body>
+</html>
