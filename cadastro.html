@@ -143,7 +143,7 @@ footer .content p{
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading">Cadastro</div>
+                <div class="panel-heading"><h3 style="color: #431210; font-family: 'Moon Flower', sans-serif;font-weight: bold; font-size:25px">Cadastro</h3></div>
                 <div class="panel-body">
                     <form class="form-horizontal" role="form" method="POST" action="user/perfil.html">
 
@@ -270,7 +270,6 @@ footer .content p{
                             <label for="estado" class="col-md-4 control-label">Estado</label>
 
                             <div class="col-md-6">
-<<<<<<< HEAD
                                 <input id="estado" type="text" class="form-control" name="estado" placeholder="Estado"
                                 maxlength="2" required> <br>
 
@@ -278,37 +277,28 @@ footer .content p{
                           </div>
             </div>
             <!-- CREDIT CARD FORM STARTS HERE -->
-            <div class="panel-heading display-table" >
-                <div class="row display-tr" >
-                    <h3 class="panel-title display-td">Pagamento</h3>
-                    <div class="display-td" >
-                        <img class="img-responsive pull-right" src="http://i76.imgup.net/accepted_c22e0.png">
+            <fieldset>
+                <legend style="color: #431210; font-family: 'Moon Flower', sans-serif;font-weight: bold; font-size:25px"> &nbsp;&nbsp;&nbsp;Cartão de crédito</legend>
+
+                    <div class="form-group">
+                        <label for="numero-cartao">Número - CVV</label>
+                            <input type="text" class="form-control" id="numero-cartao" name="numero-cartao">
                     </div>
-                </div>
-            </div>
-            <div class="panel-body">
-                <form role="form" id="payment-form" method="POST" action="">
-                    <div class="row">
-                        <div class="col-xs-12">
-                            <div class="form-group">
-                                <label for="cardNumber">CARD NUMBER</label>
-                                <div class="input-group">
-                                    <input
-                                        type="tel"
-                                        class="form-control"
-                                        name="cardNumber"
-                                        placeholder="Valid Card Number"
-                                        autocomplete="cc-number"
-                                        required autofocus
-                                    />
-                                    <span class="input-group-addon"><i class="fa fa-credit-card"></i></span>
-                                </div>
-=======
-                                <input id="estado" type="text" class="form-control" name="estado" value=""
-                                maxlength="2" required>
->>>>>>> 95c9c716ab641f3edc1fd5debd6ea3d19a1b94f6
-                            </div>
-                        </div>
+
+                    <div class="form-group">
+                        <label for="bandeira-cartao">Bandeira</label>
+                        <select name="bandeira-cartao" id="bandeira-cartao" class="form-control">
+                            <option value="master">MasterCard</option>
+                            <option value="visa">VISA</option>
+                            <option value="amex">American Express</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="validade-cartao">Validade</label>
+                            <input type="month" class="form-control" id="validade-cartao" name="validade-cartao">
+                    </div>
+            </fieldset>
 
                         <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
                             <label for="password" class="col-md-4 control-label">Senha</label>
@@ -322,7 +312,7 @@ footer .content p{
                             <label for="password-confirm" class="col-md-4 control-label">Confirmação da senha</label>
 
                             <div class="col-md-6">
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
+                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required><br>
                             </div>
                         </div>
 
@@ -339,7 +329,6 @@ footer .content p{
         </div>
     </div>
 </div>
-<!--Content da pagina-->
 <footer class="fixed-bottom">
    <div class="content">
      <a href="index.html"><h1>Surprice!</h1></a>
