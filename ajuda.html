@@ -61,10 +61,30 @@
 <script src="js/bootstrap.min.js"></script>
 </head>
 <body>
-<div id="app">
-<nav class="navbar navbar-default navbar-static-top">
-    <div class="container">
-        <div class="navbar-header">
+  <nav class="navbar navbar-default navbar-static-top">
+    <div class="content">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse">
+                <span class="sr-only">Toggle Navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+              <a class="navbar-brand" href="index.html">
+                  Surprice!
+              </a>
+          </div>
+
+          <div class="collapse navbar-collapse" id="app-navbar-collapse">
+              <ul class="nav navbar-nav navbar-right">
+                <div class="top-right links">
+                  <a href="login.html">Login</a>
+                  <a href="cadastro.html">Cadastro</a>
+                </div>
+              </ul>
+          </div>
+      </div>
+  </nav>
 
             <!-- Collapsed Hamburger -->
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse">
@@ -97,8 +117,13 @@
 </div>
 </div>
 
-
-<div id="direitos">Todos os direitos autorais reservados</div>
+<!--Content da pagina-->
+<footer class="fixed-bottom">
+   <div class="content">
+     <a href="index.html"><h1>Surprice!</h1></a>
+     <p>Surprice! Produtos LTDA - IFRN<br>Rua Dr. Nilo Bezerra Ramalho, 1692, Tirol</p>
+   </div>
+</footer>
 
 
 </body>
