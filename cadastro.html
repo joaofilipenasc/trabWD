@@ -293,9 +293,10 @@ footer .content p{
                               </div>
                           </div>
             </div>
+            <div class="panel panel-default">
             <div class="panel-heading"><h3 style="color: #431210; font-family: 'Moon Flower', sans-serif;font-weight: bold; font-size:25px">Cartão de crédito</h3></div>
             <div class="panel-body">
-              <div class="form-group">
+              <div class="form-group{ $errors->has('password') ? ' has-error' : '' }}">
                   <label for="numero-cartao" class="col-md-4 control-label">Número</label>
 
                   <div class="col-md-6">
@@ -304,7 +305,7 @@ footer .content p{
 
                   </div>
                 </div>
-                <div class="form-group">
+                <div class="form-group{ $errors->has('password') ? ' has-error' : '' }}">
                     <label for="bandeira-cartao" class="col-md-4 control-label">Bandeira</label>
 
                     <div class="col-md-6">
@@ -315,14 +316,14 @@ footer .content p{
                       </select>
                     </div>
                   </div>
-                  <div class="form-group">
+                  <div class="form-group{ $errors->has('password') ? ' has-error' : '' }}">
                       <label for="validade-cartao" class="col-md-4 control-label">Validade</label>
 
                       <div class="col-md-6">
                           <input id="validade-cartao" type="month" class="form-control" name="validade-cartao" required>
                       </div>
                     </div>
-                      <div class="form-group">
+                      <div class="form-group{ $errors->has('password') ? ' has-error' : '' }}">
                           <div class="col-md-6 col-md-offset-4"><br><br>
                               <button type="submit" class="btn btn-primary pull-right">
                                   Cadastrar
@@ -330,6 +331,7 @@ footer .content p{
                           </div>
                       </div>
                     </div>
+                  </div>
                     </form>
                 </div>
             </div>
