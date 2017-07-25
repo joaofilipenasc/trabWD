@@ -1,21 +1,51 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>Ajuda - Ice Cream Random</title>
+        <title>Início | Surprice!</title>
 
-<!-- Styles -->
-<link href="css/app.css" rel="stylesheet" type="text/css">
-<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
-<link rel="shortcut icon" href="images/favicon.ico"/>
+        <link href="css/app.css" rel="stylesheet" type="text/css">
+        <link href="css/style.css" rel="stylesheet" type="text/css">
+        <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+        <link rel="shortcut icon" href="images/favicon.ico"/>
 
-<style> body, html{
+        <!-- Scripts -->
+        <script src="js/app.js"></script>
+        <script src="js/jquery.js"></script>
+        <script src="js/bootstrap.min.js"></script>
 
-  background-color: #431210;
+<style>
 
+  html, body {
+      font-family: 'Moon Flower', sans-serif;
+      font-weight: bold;
+      height: 100vh;
+      margin: 0;
+      color: #431210;
+      background: url('images/bg-opacity.png') fixed #fff;
+  }
+
+
+.navbar-static-top{
+    position: fixed; /* Set the navbar to fixed position */
+    top: 0; /* Position the navbar at the top of the page */
+    width: 100%; /* Full width */
+    background-color: white;
+    height: 80px;
+}
+
+.links > a {
+    color: #431108;
+    padding: 0 25px;
+    font-size: 25px;
+    font-weight: 600;
+    letter-spacing: .1rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-family: 'Moon Flower', sans-serif;
 }
 
 .top-right {
@@ -24,32 +54,58 @@
     top: 18px;
 }
 
-
-.flex-center {
-    align-items: center;
-    display: flex;
-    justify-content: center;
+.panel-default{
+    margin-top: 100px;
+    font-family: 'helvetica', sans-serif;
 }
 
+#genero {
 
-.links > a {
-    color: black;
-    padding: 0 25px;
-    font-size: 12px;
-    font-weight: 600;
-    letter-spacing: .1rem;
-    text-decoration: none;
-    text-transform: uppercase;
+    font-family: 'helvetica', sans-serif;
 }
 
-#direitos {
-    float: right;
-    margin: 60px 30px 0 0;
-    font-size: 20px;
-    font-family: 'Moon Flower', sans-serif;
-    font-weight: bold;
-    color: black;
+.navbar-brand{
+  color: #431210;
+  padding: 25px 0 0 0;
+  font-family: 'Moon Flower', sans-serif;
+  font-weight: bold;
+  font-size: 60px;
+  margin-left: 20px;
 }
+
+footer {
+    position: relative;
+    height: 300px;
+    bottom: 0;
+    width: 100%;
+    background-color: #431210;
+    color: white;
+}
+
+footer .content h1{
+  padding: 125px 0 0 300px;
+  font-size: 80px;
+  float: left;
+  clear: right;
+  color: white;
+  font-weight: bold;
+}
+
+footer .content a{
+  text-decoration: none;
+}
+
+footer .content p{
+  padding: 160px 0 0 0;
+  margin-right: 300px;
+  font-size: 25px;
+  float: right;
+}
+
+.btn{
+  margin-left: 50px;
+}
+
 
 
 </style>
@@ -57,7 +113,7 @@
 <script src="js/app.js"></script>
 <script src="js/viaCEP.js"></script>
 <script src="js/jquery.mask.min.js"></script>
-<script src="js/jquery.js"></script>
+<script src="js/mask.js"></script>
 <script src="js/bootstrap.min.js"></script>
 </head>
 <body>
@@ -80,6 +136,8 @@
                 <div class="top-right links">
                   <a href="login.html">Login</a>
                   <a href="cadastro.html">Cadastro</a>
+                  <a href="revendedor.html">Seja um revendedor</a>
+                  <a href="ajuda.html">Ajuda</a>
                 </div>
               </ul>
           </div>
