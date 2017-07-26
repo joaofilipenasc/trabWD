@@ -9,97 +9,24 @@
 
 <!-- Styles -->
 <link href="../css/app.css" rel="stylesheet" type="text/css">
-<link href="../css/style.css" rel="stylesheet" type="text/css">
+<link href="../css/style-user.css" rel="stylesheet" type="text/css">
 <link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css">
 <link href="../css/bootstrap-social.css" rel="stylesheet" type="text/css">
 <link href="../css/font-awesome.css" rel="stylesheet" type="text/css">
 <link rel="shortcut icon" href="../images/favicon.ico"/>
 
 <style>
-
-  html, body {
+  footer {
+      position: fixed;
+      height: 300px;
+      bottom: 0;
+      width: 100%;
+      background-color: #431210;
+      color: white;
       font-family: 'Moon Flower', sans-serif;
-      font-weight: bold;
-      height: 100vh;
-      margin: 0;
-      color: #431210;
-      background: url('../images/bg-opacity.png') fixed #fff;
   }
-
-
-.navbar-static-top{
-    position: fixed; /* Set the navbar to fixed position */
-    top: 0; /* Position the navbar at the top of the page */
-    width: 100%; /* Full width */
-    background-color: white;
-    height: 80px;
-}
-
-.links > a {
-    color: #431108;
-    padding: 0 25px;
-    font-size: 25px;
-    font-weight: 600;
-    letter-spacing: .1rem;
-    text-decoration: none;
-    text-transform: uppercase;
-    font-family: 'Moon Flower', sans-serif;
-}
-
-.top-right {
-    position: absolute;
-    right: 10px;
-    top: 18px;
-}
-
-.panel-default{
-    margin-top: 100px;
-    font-family: 'helvetica', sans-serif;
-}
-
-.navbar-brand{
-  color: #431210;
-  padding: 25px 0 0 0;
-  font-family: 'Moon Flower', sans-serif;
-  font-weight: bold;
-  font-size: 60px;
-  margin-left: 20px;
-}
-
-footer {
-    position: fixed;
-    height: 300px;
-    bottom: 0;
-    width: 100%;
-    background-color: #431210;
-    color: white;
-}
-
-footer .content h1{
-  padding: 125px 0 0 300px;
-  font-size: 80px;
-  float: left;
-  clear: right;
-  color: white;
-  font-weight: bold;
-}
-
-footer .content a{
-  text-decoration: none;
-}
-
-footer .content p{
-  padding: 160px 0 0 0;
-  margin-right: 300px;
-  font-size: 25px;
-  float: right;
-}
-
-.btn{
-  margin-left: 50px;
-}
-
 </style>
+
 <!-- Scripts -->
 <script src="../js/app.js"></script>
 <script src="../js/viaCEP.js"></script>
@@ -185,11 +112,15 @@ footer .content p{
   </div>
   <!--Content da pagina-->
 
-<footer class="fixed-bottom">
-   <div class="content">
-     <a href="../index.html"><h1>Surprice!</h1></a>
-     <p>Surprice! Produtos LTDA - IFRN<br>Rua Dr. Nilo Bezerra Ramalho, 1692, Tirol</p>
-   </div>
-</footer>
+  <footer class="fixed-bottom">
+     <div class="content">
+       <a href="index.html"><h1>Surprice!</h1></a>
+       <div class="links-uteis">
+         <a href="ajuda.html">Ajuda</a><br>
+         <a href="revendedor.html">Seja um revendendor</a>
+       </div>
+      <p>Surprice! Produtos LTDA - IFRN <br> Rua Dr. Nilo Bezerra Ramalho, 1692, Tirol</p>
+     </div>
+  </footer>
 </body>
 </html>
