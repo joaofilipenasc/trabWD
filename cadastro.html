@@ -186,7 +186,7 @@ footer .content p{
                             <label for="rg" class="col-md-4 control-label">RG</label>
 
                             <div class="col-md-6">
-                                <input id="rg" type="text" class="form-control" name="rg" value=""
+                                <input id="rg" type="text" class="form-control" name="rg" value="" maxlength="11"
                                 data-mask="000.000.000" data-mask-reverse="true" pattern="\d{3}\.\d{3}\.\d{3}" required>
                             </div>
                         </div>
@@ -305,10 +305,10 @@ footer .content p{
             <div class="panel-heading"><h3 style="color: #431210; font-family: 'Moon Flower', sans-serif;font-weight: bold; font-size:25px">Cartão de crédito</h3></div>
             <div class="panel-body">
               <div class="form-group{ $errors->has('password') ? ' has-error' : '' }}">
-                  <label for="numero-cartao" class="col-md-4 control-label">Número</label>
+                  <label for="numero-cartao" class="col-md-4 control-label">Número - CVV</label>
 
                   <div class="col-md-6">
-                      <input id="numero-cartao" type="text" class="form-control" name="numero-cartao" placeholder="Número"
+                      <input id="numero-cartao" type="text" class="form-control" name="numero-cartao" placeholder=""
                       required>
 
                   </div>
